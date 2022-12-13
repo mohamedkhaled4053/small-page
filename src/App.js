@@ -1,9 +1,10 @@
 import './App.scss';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
-      lover
+      <NavBar/>
     </div>
   );
 }
