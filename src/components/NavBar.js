@@ -6,14 +6,16 @@ export default function NavBar() {
   return (
     <div className="nav_bar">
       <div className="container">
-        <nav>
-          <a className='logo' href='#'>Games</a>
-          <div className="links">
-            {navLinks.map((link) => (
-              <a key={link} href={'#' + link}>{link}</a>
-            ))}
-          </div>
-        </nav>
+        <a className="logo" href="#home">
+          Games
+        </a>
+        <div className="links">
+          {navLinks.map((link) => (
+            <a key={link} href={'#' + link}>
+              {link}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
