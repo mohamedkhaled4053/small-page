@@ -1,4 +1,6 @@
 import React from 'react';
+import Links from './Links';
+import MegaMenu from './MegaMenu';
 
 export default function NavBar() {
   let navLinks = ['articles', 'gallary', 'features', 'other links'];
@@ -10,11 +12,8 @@ export default function NavBar() {
           Games
         </a>
         <div className="links">
-          {navLinks.map((link) => (
-            <a key={link} href={'#' + link}>
-              {link}
-            </a>
-          ))}
+          <Links links={navLinks}/>
+          <MegaMenu />
         </div>
       </div>
     </div>
