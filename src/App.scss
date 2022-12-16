@@ -12,6 +12,7 @@ $main-color-alt: #1787e0;
 $section-background: #ececec;
 $section-background-alt: #fafafa;
 $main-transition: 0.3s;
+$section-padding: 100px 0;
 $small-width: 768px;
 $medium-width: 992px;
 $large-width: 1200px;
@@ -43,6 +44,10 @@ body {
   font-family: 'Cairo', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -55,7 +60,7 @@ a {
   border: solid;
   padding: 5px 20px;
   width: fit-content;
-  margin: auto;
+  margin: 0 auto 80px;
   position: relative;
   z-index: 1;
 
@@ -359,7 +364,7 @@ a {
     min-height: 100%;
     position: absolute;
     z-index: -1;
-    top: -10%;
+    top: -15%;
   }
 
   svg {
@@ -369,6 +374,7 @@ a {
     bottom: 25px;
     color: $main-color;
     animation: bounce 1.5s infinite;
+    margin-bottom: 20px;
 
     &:hover {
       color: $main-color-alt;
@@ -388,3 +394,65 @@ a {
   }
 }
 // end landing
+
+#articles {
+  padding: $section-padding;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    .article {
+      box-shadow: 0 0 10px $section-background;
+      border-radius: 2%;
+      overflow: hidden;
+      transition: $main-transition;
+      .image {
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .text {
+        padding: 20px;
+        border-bottom: solid 1px $section-background;
+        h3 {
+          margin-bottom: 10px;
+        }
+        p {
+          color: #666;
+          line-height: 1.4;
+        }
+      }
+
+      .footer {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $main-color;
+        text-transform: capitalize;
+
+        svg {
+          position: relative;
+        }
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+        svg {
+          animation: go 0.5s linear infinite;
+
+          @keyframes go {
+            from {
+              left: 0;
+            }
+            to {
+              left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
